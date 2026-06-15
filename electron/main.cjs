@@ -18,11 +18,11 @@ function createWindow() {
     }
   });
 
-  // Decide if we are in development or production loader mode
-  const devServerUrl = process.env.VITE_DEV_SERVER_URL || 'http://localhost:3000';
-  const isDev = !app.isPackaged && process.env.NODE_ENV !== 'production';
+  // Decide if we are in live dev-server mode or local file loading mode
+  const isLiveDev = process.env.ELECTRON_LIVE_DEV === 'true';
 
-  if (isDev) {
+  if (isLiveDev) {
+    const devServerUrl = process.env.VITE_DEV_SERVER_URL || 'http://localhost:3000';
     mainWindow.loadURL(devServerUrl);
     // Open DevTools securely for developers
     mainWindow.webContents.openDevTools();
