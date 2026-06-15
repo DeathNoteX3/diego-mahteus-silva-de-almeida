@@ -1,0 +1,6 @@
+{
+  "name": "ClipLote Studio",
+  "description": "Plataforma profissional de automação e co-piloto de inteligência artificial para criação de vídeos curtos de alta retenção.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

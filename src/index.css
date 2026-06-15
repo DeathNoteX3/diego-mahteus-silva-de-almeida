@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom visual refinements */
+body {
+  background-color: #0A0A0B;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Clean Custom Scrollbar styling */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #0C0C0F;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #1F1F24;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Kinetic pulsating utility */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(0.985);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s infinite ease-in-out;
+}
+
+/* Standard fade animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Text shadow for subtitle readability over glowing background loops */
+.text-shadow-md {
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 1), 
+               -2px -2px 0px rgba(0, 0, 0, 1), 
+               2px -2px 0px rgba(0, 0, 0, 1), 
+               -2px 2px 0px rgba(0, 0, 0, 1),
+               0px 4px 6px rgba(0,0,0,0.85);
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.9), 
+               -1px -1px 0px rgba(0, 0, 0, 0.9), 
+               1px -1px 0px rgba(0, 0, 0, 0.9), 
+               -1px 1px 0px rgba(0, 0, 0, 0.9);
+}
+
+/* Terminal pulsing dots */
+.loading-dots::after {
+  content: ' .';
+  animation: dots 1.5s steps(5, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% {
+    content: ' .';
+  }
+  40% {
+    content: ' . .';
+  }
+  60% {
+    content: ' . . .';
+  }
+  80%, 100% {
+    content: '';
+  }
+}
